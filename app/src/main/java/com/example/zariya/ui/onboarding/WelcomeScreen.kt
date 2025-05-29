@@ -1,4 +1,4 @@
-package com.example.zariya.ui
+package com.example.zariya.ui.onboarding
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -35,7 +35,9 @@ fun WelcomeScreenPreview() {
 }
 
 @Composable
-fun WelcomeScreen(onGetStartedClick: () -> Unit) {
+fun WelcomeScreen(
+    onGetStartedClick: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -44,7 +46,7 @@ fun WelcomeScreen(onGetStartedClick: () -> Unit) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .align(Alignment.TopCenter) // Align column to the top center
+                .align(Alignment.TopCenter)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.welcome_txt),
@@ -71,25 +73,15 @@ fun WelcomeScreen(onGetStartedClick: () -> Unit) {
                     .height(100.dp)
             )
         }
-//        Button(
-//            onClick = {},
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .align(Alignment.BottomCenter)
-//                .padding(bottom = 32.dp, start = 16.dp, end = 16.dp),
-//            colors = ButtonDefaults.buttonColors(
-//                containerColor = Color.White
-//            )
-//        ) {
-//            Text(text = "Get Started")
-//        }
+
         GradientButtonWithBorder(
             text = "Get Started",
             onClick = onGetStartedClick,
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter)
-                .padding(start = 24.dp, end = 24.dp, bottom = 32.dp))
+                .padding(start = 24.dp, end = 24.dp, bottom = 32.dp)
+        )
     }
 }
 
